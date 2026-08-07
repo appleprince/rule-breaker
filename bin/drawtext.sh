@@ -1,0 +1,1 @@
+ffmpeg -y -i "$1" -vf "drawtext=text='%{pts\:hms} - %{frame_num}': x=10: y=40: fontfile='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc': fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5" -c:v libx264 -crf 28 -g 12 -flags +cgop -c:a copy "$2"
